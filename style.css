@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* 🌑 Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top, #0a0a0a, #000);
+  color: #f5f5f5;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+/* 🛍️ Page Title */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff, 0 0 25px #00ffcc;
+  margin-bottom: 30px;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+/* 🔍 Search Form */
+form {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+select, input[type="text"], button {
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+select, input[type="text"] {
+  background: #1c1c1c;
+  color: #00ffff;
+  box-shadow: 0 0 8px #00ffff33;
+}
+
+button {
+  background: linear-gradient(90deg, #00ffff, #00ffcc);
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 0 12px #00ffcc;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #00ffff;
+}
+
+/* 🧱 Product Container */
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+/* 🛍️ Product Card */
+.product {
+  background: #111;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #00ffff33;
+  width: 230px;
+  padding: 15px;
+  transition: all 0.4s ease;
+  animation: fadeInUp 1s ease-in-out forwards;
+  position: relative;
+  overflow: hidden;
+}
+
+.product:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 35px #00ffcc99;
+}
+
+/* 🌟 Glow Overlay */
+.product::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, transparent 40%, #00ffff22 40%, transparent 80%);
+  animation: rotateGlow 8s linear infinite;
+  z-index: 0;
+}
+
+.product img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  transition: transform 0.4s ease;
+  z-index: 1;
+  position: relative;
+}
+
+.product:hover img {
+  transform: scale(1.1);
+}
+
+.product h3 {
+  color: #00ffff;
+  margin: 10px 0 5px;
+  position: relative;
+  z-index: 1;
+}
+
+.product p {
+  color: #ccc;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+/* 🔗 View Details */
+.product a {
+  display: inline-block;
+  color: #000;
+  background: linear-gradient(90deg, #00ffff, #00ffcc);
+  padding: 8px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  box-shadow: 0 0 15px #00ffcc;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.product a:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px #00ffcc;
+}
+
+/* 📦 Product Details Page */
+.product-detail {
+  width: 60%;
+  margin: 40px auto;
+  background: #111;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 0 25px #00ffcc33;
+  text-align: left;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.product-detail img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.product-detail h2 {
+  color: #00ffff;
+  margin-bottom: 15px;
+}
+
+.product-detail p {
+  color: #ddd;
+  line-height: 1.6;
+}
+
+/* ✨ Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rotateGlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
